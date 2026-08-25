@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Encaminhamento de Saúde Escolar - PSE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- ÁREA DE TELA (O Formulário Bonito) -->
+    <main class="app-container" id="app-container">
+        <header class="app-header">
+            <div class="logo-icon">📋</div>
+            <div>
+                <h1>Encaminhamento Escolar</h1>
+                <p>Programa Saúde na Escola (PSE)</p>
+            </div>
+        </header>
+
+        <form id="encaminhamento-form">
+            <!-- 0. Dados da Unidade -->
+            <section class="form-section">
+                <h2><span class="section-num">0</span> Dados da Unidade</h2>
+                <div class="form-grid">
+                    <div class="input-group full-width">
+                        <label for="unidade">Unidade de Saúde de Referência</label>
+                        <input type="text" id="unidade" name="unidade" value="Usf Dr Manoel de Araujo Felzener Vila Rica" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- I. Identificação do Paciente -->
+            <section class="form-section">
+                <h2><span class="section-num">1</span> Identificação do Paciente</h2>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="nome">Nome do aluno</label>
+                        <input type="text" id="nome" name="nome" placeholder="Nome completo" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="mae">Nome da mãe/responsável</label>
+                        <input type="text" id="mae" name="mae" placeholder="Nome completo da mãe ou responsável" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="data-nasc">Data Nasc.</label>
+                        <input type="text" id="data-nasc" name="data-nasc" placeholder="dd/mm/aaaa" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="idade">Idade</label>
+                        <input type="text" id="idade" name="idade" placeholder="Auto" readonly>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo" required>
+                            <option value="">Selecione...</option>
+                            <option value="Masculino">Masculino</option>
+                            <option value="Feminino">Feminino</option>
+                        </select>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="sus">Nº Cartão SUS</label>
+                        <input type="text" id="sus" name="sus" placeholder="Ex: 7042 0321 5161 988" required>
+                    </div>
+                </div>
+            </section>
+
+            <!-- II. Contato e Endereço -->
+            <section class="form-section">
+                <h2><span class="section-num">2</span> Endereço e Contato</h2>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="endereco">Endereço do aluno</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua/Avenida" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="numero">Nº</label>
+                        <input type="text" id="numero" name="numero" required>
+                    </div>
+                    <div class="input-group col-fill">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" id="bairro" name="bairro" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="foneresid">Fone Residencial</label>
+                        <input type="text" id="foneresid" name="foneresid" placeholder="(  ) ____-____">
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="celular">Celular</label>
+                        <input type="text" id="celular" name="celular" placeholder="(  ) 9____-____" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="fonerecado">Fone Recado</label>
+                        <input type="text" id="fonerecado" name="fonerecado" placeholder="(  ) ____-____">
+                    </div>
+                </div>
+            </section>
+
+            <!-- III. Dados Escolares -->
+            <section class="form-section">
+                <h2><span class="section-num">3</span> Dados Escolares</h2>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="escola">Escola</label>
+                        <input type="text" id="escola" name="escola" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="serie">Série/Etapa</label>
+                        <input type="text" id="serie" name="serie" required>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="turno">Turno</label>
+                        <select id="turno" name="turno" required>
+                            <option value="">Selecione...</option>
+                            <option value="MANHÃ">MANHÃ</option>
+                            <option value="TARDE">TARDE</option>
+                            <option value="INTEGRAL">INTEGRAL</option>
+                            <option value="NOITE">NOITE</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- IV. Encaminhamento -->
+            <section class="form-section">
+                <h2><span class="section-num">4</span> Detalhes do Encaminhamento</h2>
+                <div class="form-grid">
+                    <div class="input-group">
+                        <label for="encaminhamento">Encaminhamento para (Especialidade/Profissional)</label>
+                        <select id="encaminhamento" name="encaminhamento" required>
+                            <option value="">Selecione...</option>
+                            <option value="Nutricionista">Nutricionista</option>
+                            <option value="Oftalmologista">Oftalmologista</option>
+                            <option value="Fonoaudiólogo">Fonoaudiólogo</option>
+                        </select>
+                    </div>
+                    <div class="input-group col-3">
+                        <label for="data-enc">Data do Encaminhamento</label>
+                        <input type="date" id="data-enc" name="data-enc" required>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="motivo">Motivo</label>
+                        <textarea id="motivo" name="motivo" rows="3" placeholder="Descreva o motivo da avaliação..." required></textarea>
+                    </div>
+                    <div class="input-group full-width">
+                        <label for="resp-aval">Nome do responsável pela avaliação na escola</label>
+                        <input type="text" id="resp-aval" name="resp-aval">
+                    </div>
+                </div>
+            </section>
+
+            <div class="form-actions">
+                <button type="button" class="btn-secondary" id="btn-limpar">Limpar Dados</button>
+                <button type="submit" class="btn-primary" id="btn-gerar">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                    Gerar e Imprimir Guia
+                </button>
+            </div>
+        </form>
+    </main>
+
+    <!-- ÁREA DE IMPRESSÃO (Oculto na tela, visível apenas na impressão) -->
+    <div id="print-area" style="font-family: Arial, sans-serif; font-size: 11pt; color: black; line-height: 1.5;">
+        
+        <!-- Cabeçalho -->
+        <table style="width: 100%; margin-bottom: 15px; border: none;">
+            <tr>
+                <td style="width: 20%; text-align: left; border: none;">
+                    <img src="image2.jpeg" style="max-height: 80px;" alt="Logo Esq" onerror="this.src='image1.jpeg'">
+                </td>
+                <td style="width: 60%; text-align: center; border: none; vertical-align: middle;">
+                    <div style="font-weight: bold; font-size: 13pt;">PREFEITURA MUNICIPAL DE SÃO MANUEL</div>
+                    <div style="font-weight: bold; font-size: 15pt;">Diretoria Municipal de Saúde</div>
+                </td>
+                <td style="width: 20%; text-align: right; border: none;">
+                    <img src="image1.jpeg" style="max-height: 80px;" alt="Logo Dir" onerror="this.src='image2.jpeg'">
+                </td>
+            </tr>
+        </table>
+
+        <!-- Quadro de Título -->
+        <div style="border: 1px solid #000; text-align: center; padding: 5px; margin-bottom: 15px;">
+            <div style="font-weight: bold; font-size: 12pt;">GUIA DE ENCAMINHAMENTO DE SAÚDE ESCOLAR- PSE</div>
+            <div style="font-weight: bold; font-size: 12pt;">Unidade de Saúde: <span id="print-unidade"></span></div>
+        </div>
+
+        <!-- Seção I -->
+        <div style="border: 1px solid #000; padding: 10px; margin-bottom: 15px;">
+            <div style="font-weight: bold; margin-bottom: 15px;">I- Identificação do Paciente</div>
+            
+            <div style="margin-bottom: 2px;"><strong>Nome do aluno:</strong> <span id="print-nome"></span></div>
+            <div style="margin-bottom: 2px;"><strong>Nome da mãe/responsável:</strong> <span id="print-mae"></span></div>
+            
+            <div style="margin-bottom: 2px;">
+                <strong>Data nasc.:</strong> <span id="print-data"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Idade:</strong> <span id="print-idade"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Sexo:</strong> <span id="print-sexo"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Nº cartãoSUS:</strong> <span id="print-sus"></span>
+            </div>
+            
+            <div style="margin-bottom: 2px;">
+                <strong>Endereço aluno:</strong> <span id="print-endereco"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Nº:</strong> <span id="print-numero"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Bairro:</strong> <span id="print-bairro"></span>
+            </div>
+            
+            <div style="margin-bottom: 2px;">
+                <strong>Fone resid:</strong> <span id="print-foneresid"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Celular:</strong> <span id="print-celular"></span> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Fone recado:</strong> <span id="print-fonerecado"></span>
+            </div>
+            
+            <div style="margin-bottom: 2px;">
+                <strong>Escola:</strong> <span id="print-escola"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>Série:</strong> <span id="print-serie"></span> &nbsp;&nbsp;&nbsp;&nbsp;
+                <strong>TURNO:</strong> <span id="print-turno"></span>
+            </div>
+        </div>
+
+        <!-- Seção II -->
+        <div style="border: 1px solid #000; padding: 10px; margin-bottom: 15px; min-height: 250px; position: relative;">
+            <div style="margin-bottom: 20px;">
+                <strong>II- Encaminhamento para: <span id="print-encaminhamento" style="text-decoration: underline;"></span> Data: <span id="print-data-enc"></span></strong>
+            </div>
+            
+            <div style="margin-bottom: 5px;">
+                <strong>Motivo:</strong> <span id="print-motivo" style="font-weight: normal;"></span>
+            </div>
+            <div style="margin-bottom: 40px;">
+                <strong>Nome do responsável pela avaliação na escola:</strong> <span id="print-resp-aval"></span>
+            </div>
+            
+            <table style="width: 100%; text-align: center; border: none; position: absolute; bottom: 20px; left: 0;">
+                <tr>
+                    <td style="width: 50%; border: none; vertical-align: bottom;">
+                        <hr style="width: 80%; border: 0; border-top: 1px solid black; margin: 0 auto 5px auto;">
+                        <span style="font-size: 10pt;">Assinatura / Carimbo do Diretor de Escola</span>
+                    </td>
+                    <td style="width: 50%; border: none; vertical-align: bottom;">
+                        <hr style="width: 80%; border: 0; border-top: 1px solid black; margin: 0 auto 5px auto;">
+                        <span style="font-size: 10pt;">Assinatura do responsável pela avaliação</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Seção III -->
+        <div style="border: 1px solid #000; padding: 10px; margin-bottom: 30px;">
+            <div style="font-weight: bold; margin-bottom: 20px;">III - Agendamento pelo setor de regulação:</div>
+            
+            <div style="margin-bottom: 10px;">
+                Data da consulta:____/____/____ Horário:__________________________________________________
+            </div>
+            <div style="margin-bottom: 10px;">
+                Médico/Outro:__________________________________________________________________________
+            </div>
+        </div>
+
+        <!-- Rodapé -->
+        <div style="margin-top: 40px; margin-bottom: 20px;">
+            Enviado no malote por:_________________________________________________ e Carimbo da Unidade
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
